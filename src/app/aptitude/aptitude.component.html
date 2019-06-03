@@ -1,0 +1,112 @@
+<div class="dashboard-page-body">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="fixed-top header card shadow container-fluid ">
+        <div class="card-body">
+          <b style="color: #fff"> Section : </b>
+          <button class="btn success col-2 mr-2">Quantitative Aptitude</button>
+          <button class="btn primary col-2 mr-2" (click)="onNextSectionClicked()">Programming Concepts</button>
+          <button class="btn primary col-2 mr-2" (click)="onNextSectionClicked()">Coding</button>
+
+          <button class="btn danger col-1 offset-4">Time Left : {{timer}}</button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-9">
+        <div class="card left-block shadow mx-auto">
+          <div class="card-body">
+            <div *ngFor="let questions of aptitudeQuestions | keyvalue; index as i ;">
+              <p>{{i+1}}. {{questions.value[0]}}</p>
+
+
+              <label class="radio-container">{{questions.value[1]}}
+                <input type="radio" (change)="onItemChange(i,questions.value[1])" name={{i}}
+                  value={{questions.value[1]}}>
+                <span class="checkmark"></span>
+              </label>
+              <label class="radio-container">{{questions.value[2]}}
+                <input type="radio" (change)="onItemChange(i,questions.value[2])" name={{i}}
+                  value={{questions.value[2]}}>
+                <span class="checkmark"></span>
+              </label>
+              <label class="radio-container">{{questions.value[3]}}
+                <input type="radio" (change)="onItemChange(i,questions.value[3])" name={{i}}
+                  value={{questions.value[3]}}>
+                <span class="checkmark"></span>
+              </label>
+              <label class="radio-container">{{questions.value[4]}}
+                <input type="radio" (change)="onItemChange(i,questions.value[4])" name={{i}}
+                  value={{questions.value[4]}}>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <br>
+          <div class="col text-center">
+              <button type="button" class="btn btn-success shadow col-3" data-toggle="modal" data-target="#warning">Submit</button> 
+          </div>
+          <br>
+          <br>
+          <br>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="right-block">
+          <div class="card shadow">
+            <div class="card-header">
+              Section : Quantitative Aptitude
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3" *ngFor="let value of aptitudeAnswers ; index as i ;">
+                  <div [ngClass]="{'number-tag-unsolved': value == null, 'number-tag-solved': value != null}">
+                    {{i+1}}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card-footer">
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="number-tag-unsolved">
+                    Q
+                  </div>
+                </div>
+                <h5>: Unsolved</h5>
+              </div>
+              <div class="row">
+                <div class="col-md-3">
+                  <div class="number-tag-solved">
+                    Q
+                  </div>
+                </div>
+                <h5>: Solved</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br><br><br><br>
+    <div class="modal fade" id="warning" tabindex="-1" role="dialog" aria-labelledby="warning" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h6 class="modal-title" id="warning">Warning</h6>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to submit Quantitative Aptitude section ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn primary" (click)="onSubmit()" data-dismiss="modal">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

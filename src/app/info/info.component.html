@@ -1,0 +1,67 @@
+<div class="login-page-body">
+  <div class="container">
+    <div class="card shadow card-info mx-auto">
+      <div class="card-body">
+        <div class="title">Mock Test</div>
+        <p>Hi <b>{{firstname}}</b>,</p>
+        <p>1. There are total 3 sections as follows :</p>
+        <table class="table mx-auto">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Order of occurence</th>
+              <th scope="col">Section</th>
+              <th scope="col">No. of Questions</th>
+              <th scope="col">Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1st</td>
+              <td>Quantitative Aptitude</td>
+              <td>20</td>
+              <td>30 minutes</td>
+            </tr>
+            <tr>
+              <td>2nd</td>
+              <td>Programming Concepts</td>
+              <td>20</td>
+              <td>30 minutes</td>
+            </tr>
+            <tr>
+              <td>3rd</td>
+              <td>Coding</td>
+              <td>1</td>
+              <td>30 minutes</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>2. The first 2 sections (i.e. Quantitative Aptitude and Programming Concepts) contains multiple choice type
+          questions. In Coding section, you have to write the program in your desired language.</p>
+        <p>3. You have to click on the <b>Submit</b> button, once you have solved the questions in that section.</p>
+        <p>4. You can see the Time left and Questions solved in the section on the <b>right sidebar</b>.</p>
+        <p>5. You are <b>not permitted</b> to use internet during the exam. You can use calculator, pen and paper for
+          rough work instead. </p>
+        <p>6. The online compiler is yet to integrate with the application, hence you have to compile the code on your
+          local machine and then paste it in the codefield.</p>
+        <p>7. Even though you are my friend, I want you to attend all the questions seriously.</p>
+        <br>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" (change)="onAgreeChecked()" (ngModel)="isAgree" value="true">I have read the above rules and regulations.
+          </label>
+        </div><br>
+        <div class="col text-center">
+          <button type="button" class="btn btn-success shadow col-3" (click)="onStartButtonClicked()" [disabled]="isStartButtonEnable == false">Start Exam </button> 
+          <span class="timer"> {{timer}}</span>
+        </div>
+
+      </div>
+      <br>
+    </div>
+
+  </div>
+  <!-- <div class="timer shadow">
+    Please wait : {{timer}}
+  </div> -->
+</div>
