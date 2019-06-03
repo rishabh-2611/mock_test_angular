@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+.btn {
+  border-radius: 2px !important;
+}
+.success{
+  background-color: #16a808;
+  color: #fff;
+}
+.primary{
+  background-color: #6954C9;
+  color: #fff;
+}
+.danger{
+  background-color: #BA274A;
+  color : #fff;
+}
+.modal-header{
+  background-color: #16a808;
+}

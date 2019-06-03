@@ -1,0 +1,20 @@
+<div class="login-page-body">
+  <div class="container">
+    <div class="card shadow card-login mx-auto">
+      <div class="card-header text-center">
+        Login
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="authenticate()">
+          <input type="text" class="form-control" name="username" [(ngModel)]="user.username" required autocomplete="off" placeholder="Username"><br>
+          <input type="password" class="form-control" name="password" [(ngModel)]="user.password" required autocomplete="off" placeholder="Password"><br>
+          <button type="submit" class="btn btn-success shadow col-4">Login</button>
+          <button type="reset" class="btn btn-secondary ml-2 shadow col-4">Reset </button><br>
+        </form>
+      </div>
+    </div>
+    <div class="fixed-bottom footer">
+      <p>Developed with <i class="fas fa-heart heart"> </i> by <b>Rishabh</b> | All Right Reserved &copy;</p>
+    </div>
+  </div>
+</div>

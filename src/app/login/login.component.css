@@ -1,0 +1,35 @@
+.card-login {
+  width: 500px;
+  top: 200px;
+}
+.card-header{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+.login-page-body {
+  min-height: -webkit-fill-available;
+  background: #00d2ff; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #928dab,
+    #00d2ff
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #928dab,
+    #00d2ff
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.footer{
+    background-color: #212529;
+    height: 30px;
+    font-size: 14px;
+}
+.footer p{
+    text-align: center !important;
+    color: #fff;
+    line-height: 30px;
+}
+.heart{
+  color : rgb(241, 70, 70);
+}
